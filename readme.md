@@ -7,6 +7,7 @@ VAULT_URL=http://127.0.0.1:8200 # address your vault server
 VAULT_TOKEN=xxx # token approle from vault 
 VAULT_PATH=xxx/data/xxx # see on vault section in below, if using v2 add /data/ in the middle path
 VERSION=registry.xxx.id/{your_project}/{your_image}:{your_version} # example is registry.my.id/smilelikeshit/alpine:v1.0.0
+DOCKERFILE= #default read Dockerfile
 ```
 
 ### Vault 

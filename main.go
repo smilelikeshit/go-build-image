@@ -124,6 +124,7 @@ func buildImage(client DockerClient ,name, dockerfile string) error {
     }
 
     dockerFileTarReader := bytes.NewReader(inbuf.Bytes())
+
 	
 	buildImageOptions := docker.BuildImageOptions{
 		Context : ctx, 
@@ -175,7 +176,7 @@ func main(){
 
 	client.SetToken(token)
 
-	secret, err := client.Logical().Read("kv-v2/data/registry")
+	secret, err := client.Logical().Read(GetEnvVariable("VAULT_PATH"))
 	if err != nil {
 		fmt.Println(err)
 
@@ -186,7 +187,9 @@ func main(){
 
 	}
 
-	dockerfile := "Dockerfile"
+
+	dockerfile := GetEnvVariable("DOCKERFILE")
+
 	name := GetEnvVariable("VERSION")
 
 	err = buildImage(docker,name,dockerfile)
