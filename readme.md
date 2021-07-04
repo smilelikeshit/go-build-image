@@ -4,6 +4,29 @@
 Simplify  process build and push your docker image with any tools CI/CD like Gitlab-ci, Jenkins etc
 
 
+### Vault 
+assume you've already installed vault then u just only import a credentials from <i>secret-config.json</u>
+
+```bash
+imam@imam-mv:~$ vault secrets enable kv-v2
+imam@imam-mv:~$ vault kv put kv-v2/registry @secret-config.json
+imam@imam-mv:~$ vault kv get kv-v2/registry
+====== Metadata ======
+Key              Value
+---              -----
+created_time     2021-07-04T09:23:39.222333624Z
+deletion_time    n/a
+destroyed        false
+version          1
+
+======== Data ========
+Key             Value
+---             -----
+password        xxx
+registry_url    registry.xxx.id/v1/
+username        xxx
+```
+
 
 ### Usage 
 ```bash
@@ -90,5 +113,6 @@ v12.0.0: digest: sha256:b65cb0a17f021714b4ec1374fbd5a2b2db9388dfa1a1d196e72dfc51
 
 ### Reference ###
 - https://gowalker.org/github.com/fsouza/go-dockerclient
+- https://medium.com/@Frikkylikeme/controlling-docker-with-golang-code-b213d9699998
 
 
