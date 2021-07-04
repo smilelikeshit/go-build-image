@@ -32,9 +32,9 @@ imam@imam-mv:~/learn-golang/docker-api$ ./go-build-image
 {"stream":"Removing intermediate container 722169c7ecce\n"}
 {"stream":" ---\u003e c68a334b31fb\n"}
 {"stream":"Successfully built c68a334b31fb\n"}
-{"stream":"Successfully tagged registry.digitalservice.id/example/jakarta:v12.0.0\n"}
-2021/07/04 16:37:55 Has successfuly build registry.digitalservice.id/example/jakarta:v12.0.0 
-The push refers to repository [registry.digitalservice.id/example/jakarta]
+{"stream":"Successfully tagged registry.xxx.id/example/jakarta:v12.0.0\n"}
+2021/07/04 16:37:55 Has successfuly build registry.xxx.id/example/jakarta:v12.0.0 
+The push refers to repository [registry.xxx.id/example/jakarta]
 c617b6bf1a7a: Preparing
 6fdeec4f4cc1: Preparing
 0b5af8654dcf: Preparing
@@ -46,7 +46,7 @@ c617b6bf1a7a: Preparing
 0b5af8654dcf: Pushed
 c617b6bf1a7a: Pushed
 v12.0.0: digest: sha256:b65cb0a17f021714b4ec1374fbd5a2b2db9388dfa1a1d196e72dfc5162f9b977 size: 1356
-The push refers to repository [registry.digitalservice.id/example/jakarta]
+The push refers to repository [registry.xxx.id/example/jakarta]
 c617b6bf1a7a: Preparing
 6fdeec4f4cc1: Preparing
 0b5af8654dcf: Preparing
@@ -58,7 +58,7 @@ c617b6bf1a7a: Preparing
 6fdeec4f4cc1: Layer already exists
 c617b6bf1a7a: Layer already exists
 v12.0.0: digest: sha256:b65cb0a17f021714b4ec1374fbd5a2b2db9388dfa1a1d196e72dfc5162f9b977 size: 1356
-The push refers to repository [registry.digitalservice.id/example/jakarta]
+The push refers to repository [registry.xxx.id/example/jakarta]
 c617b6bf1a7a: Preparing
 6fdeec4f4cc1: Preparing
 0b5af8654dcf: Preparing
@@ -70,7 +70,7 @@ c617b6bf1a7a: Preparing
 9b558a5aaf27: Layer already exists
 c617b6bf1a7a: Layer already exists
 v12.0.0: digest: sha256:b65cb0a17f021714b4ec1374fbd5a2b2db9388dfa1a1d196e72dfc5162f9b977 size: 1356
-The push refers to repository [registry.digitalservice.id/example/jakarta]
+The push refers to repository [registry.xxx.id/example/jakarta]
 c617b6bf1a7a: Preparing
 6fdeec4f4cc1: Preparing
 0b5af8654dcf: Preparing
