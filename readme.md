@@ -1,11 +1,16 @@
+# Simplify  process build and push your docker image with any tools CI/CD like Gitlab-ci, Jenkins etc 
+### Env 
+Copy from template .env.example to .env then put your credentials like below.
 
-
-### 
-Simplify  process build and push your docker image with any tools CI/CD like Gitlab-ci, Jenkins etc
-
+```bash
+VAULT_URL=http://127.0.0.1:8200 # address your vault server 
+VAULT_TOKEN=xxx # token approle from vault 
+VAULT_PATH=xxx/data/xxx # see on vault section in below, if using v2 add /data/ in the middle path
+VERSION=registry.xxx.id/{your_project}/{your_image}:{your_version} # example is registry.my.id/smilelikeshit/alpine:v1.0.0
+```
 
 ### Vault 
-assume you've already installed vault then u just only import a credentials from <i>secret-config.json</u>
+Assume you've already installed vault. then you just only import a credentials from **_secret-config.json_**
 
 ```bash
 imam@imam-mv:~$ vault secrets enable kv-v2
@@ -60,59 +65,24 @@ imam@imam-mv:~/learn-golang/docker-api$ ./go-build-image
 The push refers to repository [registry.xxx.id/example/jakarta]
 c617b6bf1a7a: Preparing
 6fdeec4f4cc1: Preparing
-0b5af8654dcf: Preparing
-9b558a5aaf27: Preparing
-72e830a4dff5: Preparing
-9b558a5aaf27: Layer already exists
 72e830a4dff5: Layer already exists
-6fdeec4f4cc1: Pushed
-0b5af8654dcf: Pushed
 c617b6bf1a7a: Pushed
 v12.0.0: digest: sha256:b65cb0a17f021714b4ec1374fbd5a2b2db9388dfa1a1d196e72dfc5162f9b977 size: 1356
 The push refers to repository [registry.xxx.id/example/jakarta]
 c617b6bf1a7a: Preparing
-6fdeec4f4cc1: Preparing
-0b5af8654dcf: Preparing
-9b558a5aaf27: Preparing
-72e830a4dff5: Preparing
-9b558a5aaf27: Layer already exists
-0b5af8654dcf: Layer already exists
-72e830a4dff5: Layer already exists
 6fdeec4f4cc1: Layer already exists
 c617b6bf1a7a: Layer already exists
 v12.0.0: digest: sha256:b65cb0a17f021714b4ec1374fbd5a2b2db9388dfa1a1d196e72dfc5162f9b977 size: 1356
 The push refers to repository [registry.xxx.id/example/jakarta]
 c617b6bf1a7a: Preparing
-6fdeec4f4cc1: Preparing
-0b5af8654dcf: Preparing
-9b558a5aaf27: Preparing
 72e830a4dff5: Preparing
-6fdeec4f4cc1: Layer already exists
-0b5af8654dcf: Layer already exists
-72e830a4dff5: Layer already exists
-9b558a5aaf27: Layer already exists
-c617b6bf1a7a: Layer already exists
-v12.0.0: digest: sha256:b65cb0a17f021714b4ec1374fbd5a2b2db9388dfa1a1d196e72dfc5162f9b977 size: 1356
-The push refers to repository [registry.xxx.id/example/jakarta]
-c617b6bf1a7a: Preparing
-6fdeec4f4cc1: Preparing
-0b5af8654dcf: Preparing
-9b558a5aaf27: Preparing
-72e830a4dff5: Preparing
-c617b6bf1a7a: Layer already exists
-9b558a5aaf27: Layer already exists
-6fdeec4f4cc1: Layer already exists
-0b5af8654dcf: Layer already exists
-72e830a4dff5: Layer already exists
 v12.0.0: digest: sha256:b65cb0a17f021714b4ec1374fbd5a2b2db9388dfa1a1d196e72dfc5162f9b977 size: 1356
 2021/07/04 16:37:57 Has Successfully push to registry 
 2021/07/04 16:37:57 Clean image successfully
 
 ```
 
-
 ### Reference ###
 - https://gowalker.org/github.com/fsouza/go-dockerclient
 - https://medium.com/@Frikkylikeme/controlling-docker-with-golang-code-b213d9699998
-
-
+- https://www.vaultproject.io/docs/auth/approle
